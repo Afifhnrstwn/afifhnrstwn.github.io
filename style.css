@@ -143,6 +143,67 @@ body {
     color: var(--bg);
 }
 
+/* Shooping cart */
+.shooping-cart {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    height: 100vh;
+    width: 35rem;
+    padding: 1.5rem;
+    color: var(--bg);
+    background-color: #fff;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.shooping-cart.active {
+    right: 0;
+}
+
+.shooping-cart .cart-item {
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #666;
+    position: relative;
+}
+
+.shooping-cart img {
+    height: 6rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.shooping-cart h3 {
+    font-size: 1.6rem;
+    padding-bottom: 0.5rem;
+}
+
+.shooping-cart .item-price {
+    font-size: 1.2rem;
+}
+
+.shooping-cart .remove-item {
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.shooping-cart .remove-item:hover {
+    color: var(--primary);
+}
+
+
+
 
 /* hero section */
 .hero {
@@ -209,13 +270,15 @@ body {
 /* About section */
 .about, 
 .container-menu,
-.contact {
+.contact,
+.product{
     padding: 8rem 7% 1.4rem;
 }
 
 .about h2,
 .container-menu h2,
-.contact h2  {
+.contact h2,
+.product h2  {
     text-align: center;
     font-size: 2.6rem;
     margin-bottom: 3rem;
@@ -223,7 +286,8 @@ body {
 
 .about h2 span, 
 .container-menu h2 span,
-.contact h2 span {
+.contact h2 span,
+.product h2 span {
     color: var(--primary);
 }
 
@@ -258,12 +322,14 @@ body {
 
 /* menu section */
 .container-menu h2,
-.contact h2 {
+.contact h2, 
+.product h2 {
     margin-bottom: 1rem;
 }
 
 .container-menu p, 
-.contact p {
+.contact p,
+.product p {
     text-align: center;
     max-width: 30rem;
     margin: auto;
@@ -297,6 +363,81 @@ body {
 .container-menu .row .menu-card-tittle {
     margin: 1rem auto 0.5rem;
 }
+
+/* Product section */
+.product .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.product .product-card {
+    text-align: center;
+    border: 1px solid #666;
+    padding: 2rem;
+}
+
+.product .product-icons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.product .product-icons a {
+    width: 4rem;
+    height: 4rem;
+    color: #fff;
+    margin: 0.3rem;
+    border: 1px solid #666;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product .product-icons a:hover {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.product .product-image {
+    padding: 1rem;
+}
+
+.product .product-image img {
+    height: 25rem;
+}
+
+.product .product-content h3 {
+    font-size: 2rem;
+}
+
+.product .product-stars {
+    font-size: 1.7rem;
+    padding: 0.8rem;
+    color: var(--primary);
+}
+
+.product .product-stars .star-full {
+    fill: var(--primary);
+}
+
+.product .product-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.product .product-price span {
+    text-decoration: line-through;
+    font-weight: lighter;
+    font-size: 1rem;
+}
+
 
 /* contact section */
 .contact .row {
@@ -383,6 +524,63 @@ footer .credit a {
     color: var(--bg);
     font-weight: 700;
 }
+
+/* moodal box */
+/* item detail */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-container {
+    position: relative;
+    background-color: #fefe;
+    color: var(--bg);
+    margin: 15% auto;
+    padding: 1.2rem;
+    border: 1px solid #666;
+    width: 80%;
+}
+
+.modal-container .close-icon {
+    position: absolute;
+    right: 1rem;
+}
+
+.modal-content {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.modal-content img {
+    height: 16rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin-top: 1.2rem;
+}
+
+.modal-content a {
+    display: flex;
+    gap: 1rem;
+    width: 12rem;
+    background-color: var(--primary);
+    color: #fff;
+    margin-top: 1rem;
+    padding: 1rem 1.6rem;
+}
+
 
 
 
@@ -482,6 +680,10 @@ footer .credit a {
 
 .contact .row form {
     padding-top: 0;
+}
+
+.modal-content {
+    flex-wrap: wrap;
 }
 
 }
