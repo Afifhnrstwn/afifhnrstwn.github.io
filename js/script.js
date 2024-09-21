@@ -47,4 +47,26 @@ document.addEventListener('click', function(e) {
 })
 
 // modal
-const itemDetailModal = document.querySelector('#item-detail-modal')
+const itemDetailModal = document.querySelector('#item-detail-modal');
+const itemDetailButton = document.querySelectorAll('.item-detail-button');
+
+itemDetailButton.forEach((btn) => {
+    btn.onclick = (e) => {
+        itemDetailModal.style.display = 'flex';
+        e.preventDefault();
+    }
+})
+
+
+// tombol close
+document.querySelector('.modal .close-icon').onclick = (e) => {
+    itemDetailModal.style.display = 'none';
+    e.preventDefault();
+}
+
+// close modal sembarang
+window.onclick = (e) => {
+    if(e.target === itemDetailModal) {
+        itemDetailModal.style.display = 'none';
+    }
+}
